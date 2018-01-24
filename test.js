@@ -4,23 +4,32 @@ const getAllTweets = require('./src/useCases/GetAllTweets');
 const GetAllTweetsController = require('./src/controllers/GetAllTweetsController');
 const MockFactory = require('./src/factories/MockFactory');
 const Tweet = require('./src/models/Tweet');
+const TwitterHelper = require("./src/helpers/TwitterHelper");
+const config = require("./config.json");
 
 // external dependencies
 const axios = require('axios');
 const _ = require('lodash');
 const color = require('chalk');
+const util = require('util');
 
 //==================================================
 
-testGetTweetsFromRepo();
+// testGetTweetsFromRepo();
 
-testGetAllTweetsInteractor();
+// testGetAllTweetsInteractor();
 
-testGetAllTweetsController();
+// testGetAllTweetsController();
 
-testEndToEnd();
+// testEndToEnd();
 
-//==================================================
+// testTwitterForApps();
+
+// // use with caution:
+// // will block connections if there's too many attempts!
+// // testTwitterForUsers();
+
+//=============================================================
 
 function testGetTweetsFromRepo() {
 
@@ -85,7 +94,7 @@ function testGetAllTweetsController() {
 //=====================================================
 
 function testEndToEnd() {
-    const express = require('express');
+    const express = require("express");
     const app = express();
     const port = process.env.PORT || 3000;
 
@@ -115,4 +124,62 @@ function testEndToEnd() {
     });
 }
 
-//=============================================================
+//==============================================================================
+
+function testTwitterForUsers() {
+    const credentials = {
+        consumer_key: config.CONSUMER_KEY,
+        consumer_secret: config.CONSUMER_SECRET,
+        access_token_key: config.ACCESS_TOKEN_KEY,
+        access_token_secret:config.ACCESS_TOKEN_SECRET
+    }
+
+    const twitter = new TwitterHelper(credentials);
+
+    const filter = "javascript";
+
+    const streamHandler = {};
+    streamHandler.onSuccess = (event) => {
+        console.log(util.inspect(event, false, null));
+        console.log("\n//===//\n");
+    }
+
+    streamHandler.onError = (error) => {
+        // console.log(error);
+        console.log(color.red("TwitterForUsers helper -> ERROR"));
+    }
+
+    twitter.startStream(filter, streamHandler);
+}
+
+//==============================================================================
+
+function testTwitterForApps() {
+    const credentials = {
+        consumer_key: config.CONSUMER_KEY,
+        consumer_secret: config.CONSUMER_SECRET,
+        bearer_token: config.BEARER_TOKEN
+    };
+
+    const twitter = new TwitterHelper(credentials);
+
+    const filter = "javascript";
+
+    const fetchHandler = {};
+    fetchHandler.onError = (err) => {
+        // console.log(err);
+        console.log(color.red("TwitterForApps helper -> ERROR"));
+    };
+    fetchHandler.onSuccess = (tweets) => {
+        // console.log(util.inspect(tweets, false, null));
+        if (tweets.search_metadata && tweets.statuses) {
+            console.log("TwitterForApps helper -> OK");
+        } else {
+            console.log(color.yellow("TwitterForApps helper -> INVALID OUTPUT"));
+        }
+    };
+
+    twitter.fetchTweets(filter, fetchHandler);
+}
+
+//===========================================================

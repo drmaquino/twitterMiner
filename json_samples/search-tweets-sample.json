@@ -1,0 +1,335 @@
+{
+    "statuses": [
+        {
+            "created_at": "Wed Jan 24 16:58:41 +0000 2018",
+            "id": 956209653213429800,
+            "id_str": "956209653213429760",
+            "text": "RT @LearningLaravel: Building an Open Source SaaS with Laravel, VueJS and TailwindCSS\n\nhttps://t.co/PzwczdQkKV\n\n#laravel #php #javascript #…",
+            "truncated": false,
+            "entities": {
+                "hashtags": [{
+                        "text": "laravel",
+                        "indices": [112, 120]
+                    },
+                    {
+                        "text": "php",
+                        "indices": [121, 125]
+                    },
+                    {
+                        "text": "javascript",
+                        "indices": [126, 137]
+                    }
+                ],
+                "symbols": [],
+                "user_mentions": [{
+                    "screen_name": "LearningLaravel",
+                    "name": "Learning Laravel",
+                    "id": 2218199904,
+                    "id_str": "2218199904",
+                    "indices": [3, 19]
+                }],
+                "urls": [{
+                    "url": "https://t.co/PzwczdQkKV",
+                    "expanded_url": "https://learninglaravel.net/building-an-open-source-saas-with-laravel-vuejs-and-tailwindcss",
+                    "display_url": "learninglaravel.net/building-an-op…",
+                    "indices": [87, 110]
+                }]
+            },
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 785612689,
+                "id_str": "785612689",
+                "name": "Andrew Clinton",
+                "screen_name": "codingclinton",
+                "location": "Columbus, Ohio",
+                "description": "#prodigy #ionicframework #laravel #angularjs #cordova #innova",
+                "url": "http://t.co/8hq5E3IM1s",
+                "entities": {
+                    "url": {
+                        "urls": [{
+                            "url": "http://t.co/8hq5E3IM1s",
+                            "expanded_url": "http://codingclinton.com",
+                            "display_url": "codingclinton.com",
+                            "indices": [0, 22]
+                        }]
+                    },
+                    "description": {
+                        "urls": []
+                    }
+                },
+                "protected": false,
+                "followers_count": 555,
+                "friends_count": 1006,
+                "listed_count": 67,
+                "created_at": "Mon Aug 27 22:22:23 +0000 2012",
+                "favourites_count": 3507,
+                "utc_offset": -18000,
+                "time_zone": "Eastern Time (US & Canada)",
+                "geo_enabled": false,
+                "verified": false,
+                "statuses_count": 3016,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "is_translation_enabled": false,
+                "profile_background_color": "131516",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+                "profile_background_tile": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/481865244491259905/4N6fxklp_normal.jpeg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/481865244491259905/4N6fxklp_normal.jpeg",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/785612689/1403798888",
+                "profile_link_color": "009999",
+                "profile_sidebar_border_color": "EEEEEE",
+                "profile_sidebar_fill_color": "EFEFEF",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "has_extended_profile": false,
+                "default_profile": false,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null,
+                "translator_type": "none"
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Wed Jan 24 10:08:54 +0000 2018",
+                "id": 956106527823208400,
+                "id_str": "956106527823208453",
+                "text": "Building an Open Source SaaS with Laravel, VueJS and TailwindCSS\n\nhttps://t.co/PzwczdQkKV\n\n#laravel #php… https://t.co/dPtCgOzAw7",
+                "truncated": true,
+                "entities": {
+                    "hashtags": [{
+                            "text": "laravel",
+                            "indices": [91, 99]
+                        },
+                        {
+                            "text": "php",
+                            "indices": [100, 104]
+                        }
+                    ],
+                    "symbols": [],
+                    "user_mentions": [],
+                    "urls": [{
+                            "url": "https://t.co/PzwczdQkKV",
+                            "expanded_url": "https://learninglaravel.net/building-an-open-source-saas-with-laravel-vuejs-and-tailwindcss",
+                            "display_url": "learninglaravel.net/building-an-op…",
+                            "indices": [66, 89]
+                        },
+                        {
+                            "url": "https://t.co/dPtCgOzAw7",
+                            "expanded_url": "https://twitter.com/i/web/status/956106527823208453",
+                            "display_url": "twitter.com/i/web/status/9…",
+                            "indices": [106, 129]
+                        }
+                    ]
+                },
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 2218199904,
+                    "id_str": "2218199904",
+                    "name": "Learning Laravel",
+                    "screen_name": "LearningLaravel",
+                    "location": "",
+                    "description": "A learning center to learn everything about Laravel 5",
+                    "url": "http://t.co/LyjrlbkpNR",
+                    "entities": {
+                        "url": {
+                            "urls": [{
+                                "url": "http://t.co/LyjrlbkpNR",
+                                "expanded_url": "http://LearningLaravel.net",
+                                "display_url": "LearningLaravel.net",
+                                "indices": [0, 22]
+                            }]
+                        },
+                        "description": {
+                            "urls": []
+                        }
+                    },
+                    "protected": false,
+                    "followers_count": 64739,
+                    "friends_count": 41080,
+                    "listed_count": 601,
+                    "created_at": "Wed Nov 27 17:57:38 +0000 2013",
+                    "favourites_count": 2080,
+                    "utc_offset": 25200,
+                    "time_zone": "Hanoi",
+                    "geo_enabled": false,
+                    "verified": false,
+                    "statuses_count": 1519,
+                    "lang": "en",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "is_translation_enabled": false,
+                    "profile_background_color": "F2F0EF",
+                    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000144222605/bw7evxPq.png",
+                    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000144222605/bw7evxPq.png",
+                    "profile_background_tile": false,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/735153482362015744/2CefOV14_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/735153482362015744/2CefOV14_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/2218199904/1386587223",
+                    "profile_link_color": "E3582D",
+                    "profile_sidebar_border_color": "FFFFFF",
+                    "profile_sidebar_fill_color": "F3F3F3",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "has_extended_profile": false,
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null,
+                    "translator_type": "none"
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "retweet_count": 24,
+                "favorite_count": 44,
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "lang": "en"
+            },
+            "is_quote_status": false,
+            "retweet_count": 24,
+            "favorite_count": 0,
+            "favorited": false,
+            "retweeted": false,
+            "possibly_sensitive": false,
+            "lang": "en"
+        },
+        {
+            "created_at": "Wed Jan 24 16:58:38 +0000 2018",
+            "id": 956209639963717600,
+            "id_str": "956209639963717632",
+            "text": "#Frontend | JavaScript Telemetry: Black Box Recorder for App Crashes https://t.co/BOu8CfmcDf",
+            "truncated": false,
+            "entities": {
+                "hashtags": [{
+                    "text": "Frontend",
+                    "indices": [0, 9]
+                }],
+                "symbols": [],
+                "user_mentions": [],
+                "urls": [{
+                    "url": "https://t.co/BOu8CfmcDf",
+                    "expanded_url": "https://frontendfoc.us/link/35307/web",
+                    "display_url": "frontendfoc.us/link/35307/web",
+                    "indices": [69, 92]
+                }]
+            },
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "source": "<a href=\"https://www.hasdid.com\" rel=\"nofollow\">GApps-Newsletter</a>",
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 386830764,
+                "id_str": "386830764",
+                "name": "Yohan J. Rodríguez",
+                "screen_name": "hasdid",
+                "location": "",
+                "description": "Nanotechnology PhD. Developer & Blogger. Passion for Chess and Technology. Science & Research.",
+                "url": "https://t.co/w9cILKm4Oz",
+                "entities": {
+                    "url": {
+                        "urls": [{
+                            "url": "https://t.co/w9cILKm4Oz",
+                            "expanded_url": "https://www.hasdid.com",
+                            "display_url": "hasdid.com",
+                            "indices": [0, 23]
+                        }]
+                    },
+                    "description": {
+                        "urls": []
+                    }
+                },
+                "protected": false,
+                "followers_count": 1876,
+                "friends_count": 1658,
+                "listed_count": 139,
+                "created_at": "Sat Oct 08 00:19:29 +0000 2011",
+                "favourites_count": 133,
+                "utc_offset": -25200,
+                "time_zone": "Arizona",
+                "geo_enabled": false,
+                "verified": false,
+                "statuses_count": 4891,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "is_translation_enabled": false,
+                "profile_background_color": "022330",
+                "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/773138665/6416711e467a875e9812411070cb4ed8.jpeg",
+                "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/773138665/6416711e467a875e9812411070cb4ed8.jpeg",
+                "profile_background_tile": false,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/773958600851124224/NippBvxC_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/773958600851124224/NippBvxC_normal.jpg",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/386830764/1480712774",
+                "profile_link_color": "1B95E0",
+                "profile_sidebar_border_color": "FFFFFF",
+                "profile_sidebar_fill_color": "C0DFEC",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "has_extended_profile": false,
+                "default_profile": false,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null,
+                "translator_type": "none"
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "is_quote_status": false,
+            "retweet_count": 1,
+            "favorite_count": 0,
+            "favorited": false,
+            "retweeted": false,
+            "possibly_sensitive": false,
+            "lang": "en"
+        }
+    ],
+    "search_metadata": {
+        "completed_in": 0.09,
+        "max_id": 956209660691910700,
+        "max_id_str": "956209660691910656",
+        "query": "javascript",
+        "refresh_url": "?since_id=956209660691910656&q=javascript&include_entities=1",
+        "count": 15,
+        "since_id": 0,
+        "since_id_str": "0"
+    }
+}
