@@ -12,6 +12,16 @@ const color = require('chalk');
 
 //==================================================
 
+testGetTweetsFromRepo();
+
+testGetAllTweetsInteractor();
+
+testGetAllTweetsController();
+
+testEndToEnd();
+
+//==================================================
+
 function testGetTweetsFromRepo() {
 
     let repo = new TweetsRepository();
@@ -30,8 +40,6 @@ function testGetTweetsFromRepo() {
 
     repo.getAllTweets(onError, onSuccess);
 };
-
-testGetTweetsFromRepo();
 
 //=============================================================
 
@@ -55,8 +63,6 @@ function testGetAllTweetsInteractor() {
     interactor.start();
 };
 
-testGetAllTweetsInteractor();
-
 //==============================================================
 
 function testGetAllTweetsController() {
@@ -75,8 +81,6 @@ function testGetAllTweetsController() {
     }
     controller.onGetAllTweets(req, res);
 };
-
-testGetAllTweetsController();
 
 //=====================================================
 
@@ -110,7 +114,5 @@ function testEndToEnd() {
         console.log(color.red("GetAllTweets use case -> ERROR"));
     });
 }
-
-testEndToEnd();
 
 //=============================================================
