@@ -5,9 +5,16 @@
   "main": "server.js",
   "scripts": {
     "test": "nodemon test.js",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
-  "author": "drmaquino",
+  "author": {
+    "name": "drmaquino",
+    "email": "mariano.aquino@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drmaquino/twitterMiner.git"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "~1.18.2",
@@ -22,6 +29,7 @@
   },
   "devDependencies": {
     "chalk": "^2.3.0",
+    "get-twitter-bearer-token": "^1.0.0",
     "nodemon": "^1.14.11"
   }
 }
