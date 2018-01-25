@@ -1,5 +1,5 @@
 // internal dependencies
-GetAllTweets = require('../useCases/GetAllTweets');
+GetAllTweets = require("../useCases/GetAllTweets");
 
 // external dependencies
 
@@ -17,7 +17,7 @@ class GetAllTweetsController {
             res.send(tweets);
         };
         handler.tweetsRetrievalFailed = () => {
-            res.send('error retrieving tweets');
+            res.send("error retrieving tweets");
         };
 
         const useCase = new GetAllTweets(repo, handler);
