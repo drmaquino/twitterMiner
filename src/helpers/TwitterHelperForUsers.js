@@ -1,7 +1,7 @@
 // external dependencies
 const Twitter = require("twitter");
 
-class TwitterHelper {
+class TwitterHelperForUsers {
 
     constructor (credentials) {
         this.client = new Twitter(credentials);
@@ -42,4 +42,4 @@ class TwitterHelper {
     }
 }
 
-module.exports = TwitterHelper;
+module.exports = TwitterHelperForUsers;
