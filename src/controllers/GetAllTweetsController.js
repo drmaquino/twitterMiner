@@ -10,9 +10,9 @@ class GetAllTweetsController {
     }
 
     onGetAllTweets(req, res){
-        let repo = this.factory.createTweetsRepository();
+        const repo = this.factory.createTweetsRepository();
 
-        let handler = {};
+        const handler = {};
         handler.tweetsRetrieved = tweets => {
             res.send(tweets);
         };
@@ -20,7 +20,7 @@ class GetAllTweetsController {
             res.send('error retrieving tweets');
         };
 
-        let useCase = new GetAllTweets(repo, handler);
+        const useCase = new GetAllTweets(repo, handler);
         useCase.start();
     }
 };
