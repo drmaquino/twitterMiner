@@ -20,6 +20,16 @@ class MockFactory {
 
         return repo;
     }
+
+    createTwitterHelperForUsers () {
+        const helper = {};
+        return helper;
+    }
+
+    createTwitterHelperForApps () {
+        const helper = {};
+        return helper;
+    }
 }
 
 module.exports = MockFactory;
