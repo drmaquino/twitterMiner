@@ -7,7 +7,8 @@ class Factory {
 
     constructor () {
         this.repository = null;
-        this.helper = null;
+        this.helperForApps = null;
+        this.helperForUsers = null;
     }
 
     createTweetsRepository () {
@@ -18,28 +19,28 @@ class Factory {
     }
 
     createTwitterHelperForUsers () {
-        if (!this.helper){
+        if (!this.helperForUsers){
             const credentials = {
                 consumer_key: config.CONSUMER_KEY,
                 consumer_secret: config.CONSUMER_SECRET,
                 access_token_key: config.ACCESS_TOKEN_KEY,
                 access_token_secret:config.ACCESS_TOKEN_SECRET
             }
-            this.helper = new TwitterHelperForUsers(credentials);
+            this.helperForUsers = new TwitterHelperForUsers(credentials);
         }
-        return this.helper;
+        return this.helperForUsers;
     }
 
     createTwitterHelperForApps () {
-        if (!this.helper){
+        if (!this.helperForApps){
             const credentials = {
                 consumer_key: config.CONSUMER_KEY,
                 consumer_secret: config.CONSUMER_SECRET,
                 bearer_token: config.BEARER_TOKEN
             };
-            this.helper = new TwitterHelperForApps(credentials);
+            this.helperForApps = new TwitterHelperForApps(credentials);
         }
-        return this.helper;
+        return this.helperForApps;
     }
 }
 

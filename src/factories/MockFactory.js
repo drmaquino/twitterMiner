@@ -1,24 +1,30 @@
+const sampleTweets = [
+                        {
+                            "field": "test field",
+                            "body":"test body"
+                        },
+                        {
+                            "field": "test field",
+                            "body":"test body"
+                        }
+                    ];
+
 class MockFactory {
 
     createTweetsRepository () {
-
-        let tweets = [
-            {
-                field: "text",
-                body: "text, this is the body of the tweet"
-            },
-            {
-                field: "text",
-                body: "text, this is the body of the tweet"
-            }
-        ]
-
-        let repo = {};
+        const repo = {};
         repo.getAllTweets = (onError, onSuccess) => {
-            onSuccess(tweets);
-        }
-
+            onSuccess(sampleTweets);
+        };
         return repo;
+    }
+
+    createGetAllTweetsController () {
+        const controller = {};
+        controller.onGetAllTweets = (req, res) => {
+            res.send(sampleTweets);
+        };
+        return controller;
     }
 
     createTwitterHelperForUsers () {
