@@ -119,9 +119,9 @@ function testGetAllTweetsRoute() {
         const tweets = response.data;
         if (tweets) {
             if (Tweet.areValid(tweets)) {
-                console.log("GetAllTweets use case -> OK");
+                console.log("GetAllTweets route -> OK");
             } else {
-                console.log(color.yellow("GetAllTweets use case -> INVALID OUTPUT"));
+                console.log(color.yellow("GetAllTweets route -> INVALID OUTPUT"));
             }
         }
         server.close();
