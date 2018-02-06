@@ -1,0 +1,1013 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"HAnd",
+				"HandleTurnAI()\tvoid"
+			],
+			[
+				"Ve",
+				"Vector3()\tVector3()"
+			],
+			[
+				"Cmd",
+				"CmdRegister()\tvoid"
+			],
+			[
+				"for",
+				"foreach"
+			],
+			[
+				"cell",
+				"cellsAttacked"
+			],
+			[
+				"test",
+				"testTwitterForUsers"
+			],
+			[
+				"fe",
+				"fetchTweets"
+			],
+			[
+				"get",
+				"getBearerToken"
+			],
+			[
+				"Tw",
+				"TwitterStreamPOC"
+			],
+			[
+				"va",
+				"validateTweetsFormat"
+			],
+			[
+				"vali",
+				"validateTweetsFormat"
+			],
+			[
+				"val",
+				"validateTweetsFormat"
+			],
+			[
+				"valida",
+				"validateTweetFormat"
+			],
+			[
+				"GetA",
+				"GetAllTweets"
+			],
+			[
+				"GetAll",
+				"getAllTweets"
+			],
+			[
+				"mock",
+				"mockFactory"
+			],
+			[
+				"ex",
+				"expectedFav"
+			],
+			[
+				"Get",
+				"GetAllTweetsController"
+			],
+			[
+				"GetAllTweet",
+				"onGetAllTweets"
+			],
+			[
+				"node",
+				"nodemon"
+			],
+			[
+				"num",
+				"numbers"
+			],
+			[
+				"e",
+				"decreasing_enumerations"
+			],
+			[
+				"func",
+				"funct_name"
+			],
+			[
+				"roles_",
+				"roles_funct_queries"
+			],
+			[
+				"sele",
+				"select_funct_id_query_template"
+			],
+			[
+				"que",
+				"query_template"
+			],
+			[
+				"reg",
+				"reg_n"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"qe",
+				"query"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"read",
+				"readlines\tfunction"
+			],
+			[
+				"mo",
+				"movart2"
+			],
+			[
+				"wr",
+				"write\tfunction"
+			],
+			[
+				"scl",
+				"scaleX"
+			],
+			[
+				"sc",
+				"scaleX"
+			],
+			[
+				"splR",
+				"splRealHeight"
+			],
+			[
+				"scal",
+				"scaleY"
+			],
+			[
+				"scale",
+				"scaleX"
+			],
+			[
+				"spl",
+				"splWidth"
+			],
+			[
+				"DI",
+				"DISPLAY_WIDTH"
+			],
+			[
+				"change",
+				"change_wave_offset_y"
+			],
+			[
+				"wave",
+				"wave_point"
+			],
+			[
+				"offset",
+				"offset_y"
+			],
+			[
+				"show",
+				"show_left\tfunction"
+			],
+			[
+				"sho",
+				"show_right\tfunction"
+			],
+			[
+				"n",
+				"nlargest\tfunction"
+			],
+			[
+				"push",
+				"push_left\tfunction"
+			],
+			[
+				"pop",
+				"pop_right\tfunction"
+			],
+			[
+				"pus",
+				"push_right\tfunction"
+			],
+			[
+				"right",
+				"right_min\tfunction"
+			],
+			[
+				"pop_",
+				"pop_right\tfunction"
+			],
+			[
+				"h_pop",
+				"h_pop_max\tfunction"
+			],
+			[
+				"h_",
+				"h_pop_min\tfunction"
+			],
+			[
+				"h",
+				"hl\tstatement"
+			],
+			[
+				"hrmin",
+				"hr_min"
+			],
+			[
+				"hl",
+				"hl_max\tstatement"
+			],
+			[
+				"heap",
+				"heapr\tstatement"
+			],
+			[
+				"heapp",
+				"heappush\tfunction"
+			],
+			[
+				"has",
+				"has_loop\tfunction"
+			],
+			[
+				"rea",
+				"readlines\tfunction"
+			],
+			[
+				"pa",
+				"path\tstatement"
+			],
+			[
+				"w",
+				"wghts\tstatement"
+			],
+			[
+				"prop",
+				"proposal\tforstmt"
+			],
+			[
+				"max",
+				"max_revenue\tstatement"
+			],
+			[
+				"min_coins",
+				"min_coins_top_down\tfunction"
+			],
+			[
+				"fib",
+				"fibonacci_k_space\tfunction"
+			],
+			[
+				"str",
+				"string\tparam"
+			],
+			[
+				"to_",
+				"to_char_array\tfunction"
+			],
+			[
+				"app",
+				"appendleft\tfunction"
+			],
+			[
+				"print",
+				"printf\tprintf …"
+			],
+			[
+				"prin",
+				"printf\tprintf …"
+			],
+			[
+				"mc",
+				"mc_top_bottom\tfunction"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"dict",
+				"custom_dict"
+			],
+			[
+				"wo",
+				"words_dict"
+			],
+			[
+				"word",
+				"word_dict"
+			],
+			[
+				"en",
+				"en_to_spa\tstatement"
+			],
+			[
+				"fil",
+				"filedata\tstatement"
+			],
+			[
+				"dir",
+				"dir_path\tstatement"
+			],
+			[
+				"p",
+				"path\tmodule"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"provi",
+				"providers"
+			],
+			[
+				"itine",
+				"itineraries"
+			],
+			[
+				"i",
+				"itineraries"
+			],
+			[
+				"price",
+				"pricetemp3"
+			],
+			[
+				"pri",
+				"pricetemp2"
+			],
+			[
+				"priecte",
+				"pricetemp2"
+			],
+			[
+				"book",
+				"bookURLRaw"
+			],
+			[
+				"pro",
+				"providerNameRaw"
+			],
+			[
+				"iti",
+				"itinerary"
+			],
+			[
+				"itin",
+				"itineraries"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"mon",
+				"mongodb"
+			],
+			[
+				"mongo",
+				"mongodb_uri"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"CANT",
+				"CANT_COLS"
+			],
+			[
+				"CANT_",
+				"CANT_COLS"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				]
+			],
+			[
+				"Packages/Lua Love/LuaLove.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua/Lua.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				],
+				[
+					"Packages/User/love-run.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Lua Love/LuaLove.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/Python3.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/python3.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 334.0,
+		"last_filter": "git commi",
+		"selected_items":
+		[
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"omnisharp",
+				"OmniSharpSublime: Show Server Output"
+			],
+			[
+				"omnisharpSublime",
+				"OmniSharpSublime: Reload Solution"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"add cu",
+				"Git: Add Current File"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"git add ",
+				"Git: Add Current File"
+			],
+			[
+				"git ",
+				"Git: Status"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git add cu",
+				"Git: Add Current File"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"pi",
+				"Package Control: Install Package"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git:co",
+				"Git: Commit"
+			],
+			[
+				"git:",
+				"Git: Commit"
+			],
+			[
+				"git: add",
+				"Git: Add..."
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"p",
+				"Package Control: Remove Package"
+			],
+			[
+				"gutt",
+				"GitGutter: Compare Against Origin"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"quick c",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"disa",
+				"Disable/Enable buildview for this window"
+			],
+			[
+				"gi",
+				"GitGutter: Compare Against Origin"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"dis",
+				"Disable/Enable buildview for this window"
+			]
+		],
+		"width": 427.0
+	},
+	"console":
+	{
+		"height": 144.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mariano/Desktop/twitterMiner"
+	],
+	"file_history":
+	[
+		"/home/mariano/Desktop/pagar claro con tarjeta ",
+		"/home/mariano/Downloads/GGJ/new scripts/GameManager.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/GameManager.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/Player.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/GameManagerOffline.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/PlayerOffline.cs",
+		"/home/mariano/Downloads/GGJ/new scripts/Player.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/ViralBattle.sublime-project",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/ViralBattle.sublime-project",
+		"/home/mariano/Desktop/file_in_usr_share_X11_xorg.conf.d_60-libinput.conf.txt",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/PlayerAI.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/Cell.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/PlayerOffline2.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMARIANO/GameManager.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMARIANO/Player.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMULTIPLAYER/Player.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMULTIPLAYER/GameManager.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/Grid.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMULTIPLAYER/GridData.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/GridData.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMULTIPLAYER/Status.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMULTIPLAYER/Grid.cs",
+		"/home/mariano/Downloads/GGJ/ScriptsMULTIPLAYER/Cell.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/Test.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/newclass.cs",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/ViralWars.sublime-project",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/.gitignore",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/four_ways_ggj18.sln",
+		"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets/Scripts/Status.cs",
+		"/home/mariano/Desktop/twitterMiner/src/factories/MockFactory.js",
+		"/home/mariano/Desktop/twitterMiner/src/factories/Factory.js",
+		"/home/mariano/Desktop/twitterMiner/src/controllers/GetAllTweetsController.js",
+		"/home/mariano/Desktop/twitterMiner/src/helpers/TwitterHelperForUsers.js",
+		"/home/mariano/Desktop/twitterMiner/src/helpers/TwitterHelperForApps.js",
+		"/home/mariano/Desktop/twitterMiner/test.js",
+		"/home/mariano/Desktop/twitterMiner/json_samples/statuses-filter-sample.json",
+		"/home/mariano/Desktop/twitterMiner/src/helpers/TwitterHelper.js",
+		"/home/mariano/Desktop/twitterMiner/json_samples/statuses-filter-samples-raw.json",
+		"/home/mariano/Desktop/twitterMiner/config.json",
+		"/home/mariano/Desktop/twitterMiner/.gitignore",
+		"/home/mariano/Desktop/twitterMiner/DataMiner.js",
+		"/home/mariano/Desktop/twitterMiner/package.json",
+		"/home/mariano/Desktop/twitterMiner/json_samples/search-tweets-sample.json",
+		"/home/mariano/Desktop/twitterMiner/search-tweets-sample.json",
+		"/home/mariano/Desktop/twitterMiner/stream-sample.json",
+		"/home/mariano/Desktop/twitterMiner/event-schema.txt",
+		"/home/mariano/Desktop/twitterMiner/server.js",
+		"/home/mariano/Desktop/twitterMiner/src/repositories/TweetsRepository.js",
+		"/home/mariano/Desktop/twitterMiner/models/Tweet.js",
+		"/home/mariano/Desktop/twitterMiner/src/test.js",
+		"/home/mariano/Desktop/raul - gasista.txt",
+		"/home/mariano/Desktop/nodetest/api/repositories/TweetsRepository.js",
+		"/home/mariano/Desktop/nodetest/api/factories/MockFactory.js",
+		"/home/mariano/Desktop/nodetest/api/factories/Factory.js",
+		"/home/mariano/Desktop/nodetest/api/controllers/GetAllTweetsController.js",
+		"/home/mariano/Desktop/nodetest/api/factories/AbstractFactory.js",
+		"/home/mariano/Desktop/nodetest/db.txt",
+		"/home/mariano/Desktop/nodetest/api/repositories/TweetsRepositoryFactory.js",
+		"/home/mariano/Desktop/nodetest/api/repositories/MockTweetsRepository.js",
+		"/home/mariano/Desktop/nodetest/api/useCases/GetAllTweets.js",
+		"/home/mariano/Desktop/nodetest/package.json",
+		"/home/mariano/Desktop/nodetest/api/TweetsRepo/TweetsRepository.js",
+		"/home/mariano/Desktop/nodetest/api/routes/route.js",
+		"/home/mariano/Desktop/nodetest/server.js",
+		"/home/mariano/Desktop/nodetest/package-lock.json",
+		"/home/mariano/Desktop/nodetest/test.js",
+		"/home/mariano/.config/sublime-text-3/Packages/User/node.sublime-build",
+		"/home/mariano/Desktop/test.py",
+		"/home/mariano/.config/sublime-text-3/Packages/User/python3.sublime-build",
+		"/home/mariano/Desktop/hola.py",
+		"/home/mariano/.config/sublime-text-3/Packages/User/Python3-5-2.sublime-build",
+		"/home/mariano/.config/sublime-text-3/Packages/User/Python3-6.sublime-build",
+		"/home/mariano/Desktop/ETI/datos de pago.txt",
+		"/home/mariano/Desktop/examen.txt",
+		"/home/mariano/Desktop/JUANI/processor.py",
+		"/home/mariano/Desktop/JUANI/queries.txt",
+		"/home/mariano/Downloads/react-demo-app/src/index.js",
+		"/home/mariano/Downloads/BarcodeCam.cs",
+		"/home/mariano/Desktop/correccionesTPfinal.txt",
+		"/home/mariano/Downloads/my-app/src/index.css",
+		"/home/mariano/Downloads/my-app/src/index.js",
+		"/home/mariano/Desktop/DEMO_FILO/tools.txt",
+		"/home/mariano/Desktop/jueguito.txt",
+		"/home/mariano/Desktop/videooooo/How to properly move a fridge... _ funny_files/saved_resource.html",
+		"/home/mariano/Desktop/videooooo/How to properly move a fridge... _ funny_files/videoplayer.7eG79Ylqv7c.js",
+		"/home/mariano/Desktop/Tu amor - Letra",
+		"/home/mariano/Desktop/pp.py",
+		"/home/mariano/Videos/peliculas/Gattaca (1997)/Gattaca.1997.720p.BrRip.x264.bitloks.YIFY.srt",
+		"/home/mariano/Videos/peliculas/Secretary.2002.720p.BluRay.H264.AAC-RARBG/Secretary.2002.1080p.BluRay.x264.DTS-SARTRE_SPA.srt",
+		"/home/mariano/.cache/.fr-XduOkc/Secretary.2002.1080p.BluRay.x264.DTS-SARTRE_SPA.srt",
+		"/home/mariano/Videos/peliculas/Secretary.2002.720p.BluRay.H264.AAC-RARBG/Secretary.2002.720p.DTS.BluRay.X264-AMIABLE-Spa Spanish/Readme.txt",
+		"/home/mariano/Videos/peliculas/Secretary.2002.720p.BluRay.H264.AAC-RARBG/Secretary.2002.720p.BluRay.H264.AAC-RARBG.nfo",
+		"/home/mariano/Videos/peliculas/Secretary.2002.720p.BluRay.H264.AAC-RARBG/RARBG.txt",
+		"/home/mariano/Videos/peliculas/El Sexo De Los Angeles [dvdrip][spanish][www.lokotorrents.com]/El sexo de los ángeles (2012).srt",
+		"/home/mariano/Videos/peliculas/The.Sex.Of.The.Angels.2012.UNRATED.720p.WEB-DL.H264-WEBiOS [PublicHD]/The.Sex.Of.The.Angels.2012.UNRATED.720p.WEB-DL.H264-WEBiOS.nfo",
+		"/home/mariano/.local/share/applications/GoogleChrome.desktop",
+		"/home/mariano/.local/share/applications/HangoutsChrome.desktop",
+		"/home/mariano/.local/share/applications/chrome-gihnbpbijommpphjdknjllegaoollmma-Default.desktop",
+		"/home/mariano/Videos/peliculas/Moana (2016) [YTS.AG]/Moana.2016.BDRip.x264-GECKOS + YTS.AG.srt",
+		"/home/mariano/Desktop/resumen fima.txt",
+		"/home/mariano/.cache/.fr-JfmRme/install.txt",
+		"/home/mariano/Downloads/Partituras corales de Zambas ( Argentina)/Nuevo documento de texto.txt",
+		"/home/mariano/Videos/peliculas/I Origins (2014)/i-origins.720p.BluRay.x264.YIFY.srt",
+		"/home/mariano/Desktop/python stuff/MOVART2",
+		"/home/mariano/Desktop/python stuff/MOVART",
+		"/home/mariano/Desktop/python stuff/tad_test.py",
+		"/home/mariano/Desktop/python stuff/VENDEDOR",
+		"/home/mariano/Desktop/python stuff/numbers1.txt",
+		"/home/mariano/Desktop/python stuff/numbers2.txt",
+		"/home/mariano/Desktop/python stuff/numbers.txt",
+		"/home/mariano/Desktop/python stuff/testing type annotations.py",
+		"/home/mariano/Desktop/python stuff/test.py",
+		"/home/mariano/Desktop/python stuff/hola.py",
+		"/home/mariano/Videos/peliculas/Princess.Mononoke.1080p.DualAudio.English.Japanese.6ch.hime.OST.Extras.BRrip.BDrip.[KoTuWa]/Princess.Mononoke.1080p.DualAudio.5.1.English.Japanese.BDrip.[KoTuWa].srt",
+		"/home/mariano/Desktop/LauCroxattoTp0/src/paquetito/Fotocopiadora.java",
+		"/home/mariano/Desktop/LauCroxattoTp0/src/paquetito/Pagina.java",
+		"/home/mariano/Desktop/LauCroxattoTp0/src/paquetito/Libro.java",
+		"/home/mariano/Desktop/LauCroxattoTp0/src/paquetito/Libreria.java",
+		"/home/mariano/workspaces/mariano/JChatServer/src/com/chat/Server.java",
+		"/home/mariano/workspaces/mariano/JChatClientConsole/.gitignore",
+		"/home/mariano/workspaces/mariano/JChatClientSWT/.classpath",
+		"/home/mariano/.cache/.fr-JmdriO/claseUno/src/claseUno/Historieta.java",
+		"/home/mariano/.cache/.fr-AggEhZ/claseUno/src/claseUno/Revista.java",
+		"/home/mariano/.cache/.fr-PZr3oC/claseUno/src/claseUno/Libro.java",
+		"/home/mariano/Desktop/MultiUserChat/ChatServer/src/com/muc/ServerMain.java",
+		"/home/mariano/Desktop/textos/paraleercuandoestestriste.txt",
+		"/home/mariano/software/android-sdk-linux/SDK Readme.txt",
+		"/home/mariano/software/android-sdk-linux/tools/android"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"/home/mariano/Downloads/GGJ/four_ways_ggj18/four_ways_ggj18/Assets"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"GameManagerOfflineInstance",
+			"hit.point",
+			"Debug.Log(\"",
+			"AudioManager.SFX.Invalid",
+			"AudioManager",
+			"true",
+			"GameManagerOffline.",
+			"GM.",
+			"GameManager.",
+			"GM.",
+			"GM",
+			"playerID",
+			"GameManager.Instance",
+			"AM",
+			"GM",
+			"private",
+			"AudioManager.Instance",
+			"GameManager.Instance",
+			"private",
+			"RpcStartGame",
+			"playerID",
+			"Play(",
+			"Play",
+			"RpcStartGame",
+			"currentPlayer",
+			"IsMyTurn",
+			")\n",
+			"GameManagerOffline",
+			"GameManager",
+			"=",
+			"AudioManager.Instance",
+			"GameManagerOffline.Instance",
+			"GameManager.Instance",
+			"HandleClick",
+			"MouseClick",
+			"HandleClick",
+			"MouseClick",
+			"HandleRealClick",
+			"HandleClick"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 264.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 106.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 106.0
+	},
+	"pinned_build_system": "",
+	"project": "twitter-miner.sublime-project",
+	"replace":
+	{
+		"height": 41.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 425.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 323.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 230.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
