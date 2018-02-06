@@ -12,15 +12,16 @@ class GetAllTweetsController {
     onGetAllTweets(req, res){
         const repo = this.factory.createTweetsRepository();
 
-        const handler = {};
-        handler.tweetsRetrieved = tweets => {
-            res.send(tweets);
-        };
-        handler.tweetsRetrievalFailed = () => {
-            res.send("error retrieving tweets");
+        const presenter = {
+            tweetsRetrieved: (tweets) => {
+                res.send(tweets);
+            },
+            tweetsRetrievalFailed: () => {
+                res.send("error retrieving tweets");
+            }
         };
 
-        const useCase = new GetAllTweets(repo, handler);
+        const useCase = new GetAllTweets(repo, presenter);
         useCase.start();
     }
 };

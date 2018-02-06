@@ -14,7 +14,9 @@ const factory = new Factory();
 const controller = new GetAllTweetsController(factory);
 
 // routes
-app.route('/').get((req, res) => controller.onGetAllTweets(req,res));
+app.route('/tweets').get((req, res) => controller.onGetAllTweets(req,res));
+
+app.route('/tweets?username={username}').get((req, res) => controller.onGetAllTweets(req,res));
 
 // start listening
 app.listen(port);

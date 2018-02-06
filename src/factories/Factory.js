@@ -1,4 +1,4 @@
-const TweetsRepository = require('../repositories/TweetsRepository');
+const TweetsFileRepository = require('../repositories/TweetsFileRepository');
 const TwitterHelperForUsers = require("../helpers/TwitterHelperForUsers");
 const TwitterHelperForApps = require("../helpers/TwitterHelperForApps");
 const config = require("../../config.json");
@@ -12,14 +12,14 @@ class Factory {
     }
 
     createTweetsRepository () {
-        if (this.repository == null){
-            this.repository = new TweetsRepository();
+        if (this.repository == null) {
+            this.repository = new TweetsFileRepository();
         }
         return this.repository;
     }
 
     createTwitterHelperForUsers () {
-        if (!this.helperForUsers){
+        if (!this.helperForUsers) {
             const credentials = {
                 consumer_key: config.CONSUMER_KEY,
                 consumer_secret: config.CONSUMER_SECRET,
@@ -32,7 +32,7 @@ class Factory {
     }
 
     createTwitterHelperForApps () {
-        if (!this.helperForApps){
+        if (!this.helperForApps) {
             const credentials = {
                 consumer_key: config.CONSUMER_KEY,
                 consumer_secret: config.CONSUMER_SECRET,

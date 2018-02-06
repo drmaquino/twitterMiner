@@ -11,18 +11,27 @@ const sampleTweets = [
 
 class MockFactory {
 
+    getSampleTweets () {
+        return sampleTweets;
+    }
+
     createTweetsRepository () {
-        const repo = {};
-        repo.getAllTweets = (onError, onSuccess) => {
-            onSuccess(sampleTweets);
+        const repo = {
+            getAllTweets: (handler) => {
+                handler.onSuccess(sampleTweets);
+            },
+            saveTweets: (tweets, handler) => {
+                handler.onSuccess();
+            }
         };
         return repo;
     }
 
     createGetAllTweetsController () {
-        const controller = {};
-        controller.onGetAllTweets = (req, res) => {
-            res.send(sampleTweets);
+        const controller = {
+            onGetAllTweets: (req, res) => {
+                res.send(sampleTweets);
+            }
         };
         return controller;
     }

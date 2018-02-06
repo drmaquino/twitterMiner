@@ -7,19 +7,28 @@ const ENCODING = 'utf-8';
 
 class TweetsRepository {
 
-    // saveTweet(tweet, onError, onSuccess) {
-    //     fs.appendFile(DB_PATH, 'text, this is the body of the tweet\n', (err) => {
-    //         if (err) throw err;
-    //     });
-    // }
+    saveTweets(tweets, handler) {
+        let tweetsAsString = "";
+        for (let tweet of tweets) {
+            tweetsAsString += `${tweet.field},${tweet.body}\n`;
+        }
 
-    getAllTweets(onError, onSuccess) {
+        fs.appendFile(DB_PATH, tweetsAsString, (err) => {
+            if (err) {
+                handler.onError();
+            } else {
+                handler.onSuccess();
+            }
+        });
+    }
+
+    getAllTweets(handler) {
         fs.readFile(DB_PATH, ENCODING, (err, data) => {
             if (err) {
-                onError(err);
+                handler.onError(err);
             } else {
                 let tweets = _parse(data);
-                onSuccess(tweets);
+                handler.onSuccess(tweets);
             }
         });
     }

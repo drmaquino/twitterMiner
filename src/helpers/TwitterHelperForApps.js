@@ -3,22 +3,26 @@ const Twitter = require("twitter");
 
 class TwitterHelperForApps {
 
-    constructor (credentials) {
+    constructor(credentials) {
         this.client = new Twitter(credentials);
     }
 
-    fetchTweets (filter, handler) {
+    fetchTweets(filterCriteria, handler) {
         const endPoint = "search/tweets";
 
-        const encodedFilter = encodeURI(filter);
+        const encodedFilter = encodeURI(filterCriteria);
 
-        this.client.get(endPoint, {q: encodedFilter}, function(err, tweets, response){
+        const filter = {q: encodedFilter};
+
+        const callback = (err, tweets, response) => {
             if (err){
                 handler.onError(err);
             } else {
                 handler.onSuccess(tweets);
             }
-        });
+        };
+
+        this.client.get(endPoint, filter, callback);
     }
 }
 
