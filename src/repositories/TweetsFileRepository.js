@@ -7,13 +7,10 @@ const ENCODING = 'utf-8';
 
 class TweetsRepository {
 
-    saveTweets(tweets, handler) {
-        let tweetsAsString = "";
-        for (let tweet of tweets) {
-            tweetsAsString += `${tweet.field},${tweet.body}\n`;
-        }
+    saveTweet(tweet, handler) {
+        let tweetAsString = `${tweet.field},${tweet.body}\n`;
 
-        fs.appendFile(DB_PATH, tweetsAsString, (err) => {
+        fs.appendFile(DB_PATH, tweetAsString, (err) => {
             if (err) {
                 handler.onError();
             } else {

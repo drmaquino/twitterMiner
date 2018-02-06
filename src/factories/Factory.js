@@ -1,4 +1,5 @@
 const TweetsFileRepository = require('../repositories/TweetsFileRepository');
+const TweetsMongoRepository = require('../repositories/TweetsMongoRepository');
 const TwitterHelperForUsers = require("../helpers/TwitterHelperForUsers");
 const TwitterHelperForApps = require("../helpers/TwitterHelperForApps");
 const config = require("../../config.json");
@@ -13,7 +14,8 @@ class Factory {
 
     createTweetsRepository () {
         if (this.repository == null) {
-            this.repository = new TweetsFileRepository();
+            // this.repository = new TweetsFileRepository();
+            this.repository = new TweetsMongoRepository();
         }
         return this.repository;
     }

@@ -1,6 +1,6 @@
 // internal dependencies
 const GetAllTweets = require('./src/useCases/GetAllTweets');
-const SaveTweets = require('./src/useCases/SaveTweets')
+const SaveTweet = require('./src/useCases/SaveTweet')
 const GetAllTweetsController = require('./src/controllers/GetAllTweetsController');
 const Factory = require('./src/factories/Factory');
 const MockFactory = require('./src/factories/MockFactory');
@@ -33,10 +33,10 @@ testGetAllTweetsRoute();
 
 //----------------------------------
 
-// uses file system for storage
-// testSaveTweetsToRepo();
+// uses file system or MongoDB for storage
+testSaveTweetToRepo();
 
-testSaveTweetsInteractor();
+testSaveTweetInteractor();
 
 //----------------------------------
 
@@ -153,43 +153,51 @@ function testGetAllTweetsRoute() {
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //=============================================================
 
-function testSaveTweetsToRepo() {
+function testSaveTweetToRepo() {
 
     const repo = factory.createTweetsRepository();
 
     const tweets = mockFactory.getSampleTweets();
+    const tweet = tweets[0];
 
     const handler = {
         onSuccess: () => {
-            console.log("SaveTweetsToRepo -> OK");
+            console.log("SaveTweetToRepo -> OK");
         },
         onError: () => {
-            console.log(color.red("SaveTweetsToRepo -> ERROR"));
+            console.log(color.red("SaveTweetToRepo -> ERROR"));
         }
     };
 
-    repo.saveTweets(tweets, handler);
+    repo.connect((err) => {
+        if (err) {
+            throw err;
+        } else {
+            repo.saveTweet(tweet, handler);
+        }
+    });
 }
 
 //=============================================================
 
-function testSaveTweetsInteractor() {
+function testSaveTweetInteractor() {
     const repo = mockFactory.createTweetsRepository();
 
     const presenter = {
         tweetsSaveFailed: () => {
-            console.log(color.red("SaveTweets interactor -> ERROR"));
+            console.log(color.red("SaveTweet interactor -> ERROR"));
         },
         tweetsSaved: () => {
-            console.log("SaveTweets interactor -> OK");
+            console.log("SaveTweet interactor -> OK");
         }
     };
 
-    const interactor = new SaveTweets(repo, presenter);
+    const interactor = new SaveTweet(repo, presenter);
 
     const tweets = mockFactory.getSampleTweets();
+    const tweet = tweets[0];
 
-    interactor.start(tweets);
+    interactor.start(tweet);
 }
 
 //=============================================================

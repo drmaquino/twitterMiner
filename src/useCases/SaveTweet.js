@@ -5,7 +5,7 @@ class SaveTweets {
         this.presenter = presenter;
     }
 
-    start(tweets) {
+    start(tweet) {
         const useCaseHandler = {
             onSuccess: () => {
                 this.presenter.tweetsSaved();
@@ -14,7 +14,7 @@ class SaveTweets {
                 this.presenter.tweetsSaveFailed();
             }
         };
-        this.repo.saveTweets(tweets, useCaseHandler);
+        this.repo.saveTweet(tweet, useCaseHandler);
     }
 }
 

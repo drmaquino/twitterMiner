@@ -20,7 +20,7 @@ class MockFactory {
             getAllTweets: (handler) => {
                 handler.onSuccess(sampleTweets);
             },
-            saveTweets: (tweets, handler) => {
+            saveTweet: (tweet, handler) => {
                 handler.onSuccess();
             }
         };
