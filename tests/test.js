@@ -1,11 +1,16 @@
 // internal dependencies
-const GetAllTweets = require('./src/useCases/GetAllTweets');
-const SaveTweet = require('./src/useCases/SaveTweet')
-const GetAllTweetsController = require('./src/controllers/GetAllTweetsController');
-const Factory = require('./src/factories/Factory');
-const MockFactory = require('./src/factories/MockFactory');
-const Tweet = require('./src/models/Tweet');
-const config = require("./config.json");
+const GetAllTweets = require('../src/useCases/GetAllTweets');
+const SaveTweet = require('../src/useCases/SaveTweet')
+const MineTweets = require('../src/useCases/MineTweets');
+
+const GetAllTweetsController = require('../src/controllers/GetAllTweetsController');
+
+const Factory = require('../src/factories/Factory');
+const MockFactory = require('../src/factories/MockFactory');
+
+const Tweet = require('../src/models/Tweet');
+const credentials = require("../credentials.json");
+const config = require("../config");
 
 // external dependencies
 const axios = require('axios');
@@ -21,6 +26,13 @@ const mockFactory = new MockFactory();
 
 //==================================================
 
+// uses file system or MongoDB for storage
+testSaveTweetToRepo();
+
+testSaveTweetInteractor();
+
+//----------------------------------
+
 // uses file system for storage
 testGetTweetsFromRepo();
 
@@ -33,21 +45,66 @@ testGetAllTweetsRoute();
 
 //----------------------------------
 
-// uses file system or MongoDB for storage
-testSaveTweetToRepo();
-
-testSaveTweetInteractor();
-
-//----------------------------------
-
+// use with caution:
 // uses real connection to twitter!
 // testTwitterForApps();
 
-// use with caution:
-// uses real connection to twitter!
 // will block connections if there's too many attempts!
 // testTwitterForUsers();
 
+testMineTweetsInteractor();
+
+//=============================================================
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//=============================================================
+
+function testSaveTweetToRepo() {
+
+    const repo = factory.createTweetsRepository();
+
+    const tweet = mockFactory.getSampleTweet();
+
+    const handler = {
+        onSuccess: () => {
+            console.log("SaveTweetToRepo -> OK");
+        },
+        onError: () => {
+            console.log(color.red("SaveTweetToRepo -> ERROR"));
+        }
+    };
+
+    repo.connect((err) => {
+        if (err) {
+            throw err;
+        } else {
+            repo.saveTweet(tweet, handler);
+        }
+    });
+}
+
+//=============================================================
+
+function testSaveTweetInteractor() {
+    const repo = mockFactory.createTweetsRepository();
+
+    const handler = {
+        tweetsSaveFailed: () => {
+            console.log(color.red("SaveTweet interactor -> ERROR"));
+        },
+        tweetsSaved: () => {
+            console.log("SaveTweet interactor -> OK");
+        }
+    };
+
+    const interactor = new SaveTweet(repo, handler);
+
+    const tweet = mockFactory.getSampleTweet();
+
+    interactor.start(tweet);
+}
+
+//=============================================================
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //=============================================================
 
 function testGetTweetsFromRepo() {
@@ -76,19 +133,20 @@ function testGetAllTweetsInteractor() {
 
     const repo = mockFactory.createTweetsRepository();
 
-    const presenter = {
-        tweetsRetrievalFailed: () => {
-            console.log(color.red("GetAllTweets interactor -> ERROR"));
-        },
+    const handler = {
         tweetsRetrieved: (tweets) => {
             if (Tweet.areValid(tweets)) {
                 console.log("GetAllTweets interactor -> OK");
             } else {
                 console.log(color.yellow("GetAllTweets interactor -> INVALID OUTPUT"));
             }
+        },
+        tweetsRetrievalFailed: () => {
+            console.log(color.red("GetAllTweets interactor -> ERROR"));
         }
     };
-    const interactor = new GetAllTweets(repo, presenter);
+
+    const interactor = new GetAllTweets(repo, handler);
     interactor.start();
 };
 
@@ -116,12 +174,11 @@ function testGetAllTweetsController() {
 function testGetAllTweetsRoute() {
     // setup server
     const app = express();
-    const port = process.env.PORT || 3000;
-
-    const tweetsRouter = express.Router();
+    const port = config.port;//process.env.PORT || 3000;
 
     const controller = mockFactory.createGetAllTweetsController();
 
+    const tweetsRouter = express.Router();
     tweetsRouter.get("/", (req, res) => {
         controller.onGetAllTweets(req, res);
     });
@@ -132,7 +189,7 @@ function testGetAllTweetsRoute() {
 
     // begin test
     axios.get("http://localhost:3000/tweets")
-    .then(response => {
+    .then((response) => {
         const tweets = response.data;
         if (tweets) {
             if (Tweet.areValid(tweets)) {
@@ -140,7 +197,8 @@ function testGetAllTweetsRoute() {
             } else {
                 console.log(color.yellow("GetAllTweets route -> INVALID OUTPUT"));
             }
-
+        } else {
+            console.log("GetAllTweets route -> OK (but no data retrieved)");
         }
         server.close();
     })
@@ -153,56 +211,6 @@ function testGetAllTweetsRoute() {
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //=============================================================
 
-function testSaveTweetToRepo() {
-
-    const repo = factory.createTweetsRepository();
-
-    const tweets = mockFactory.getSampleTweets();
-    const tweet = tweets[0];
-
-    const handler = {
-        onSuccess: () => {
-            console.log("SaveTweetToRepo -> OK");
-        },
-        onError: () => {
-            console.log(color.red("SaveTweetToRepo -> ERROR"));
-        }
-    };
-
-    repo.connect((err) => {
-        if (err) {
-            throw err;
-        } else {
-            repo.saveTweet(tweet, handler);
-        }
-    });
-}
-
-//=============================================================
-
-function testSaveTweetInteractor() {
-    const repo = mockFactory.createTweetsRepository();
-
-    const presenter = {
-        tweetsSaveFailed: () => {
-            console.log(color.red("SaveTweet interactor -> ERROR"));
-        },
-        tweetsSaved: () => {
-            console.log("SaveTweet interactor -> OK");
-        }
-    };
-
-    const interactor = new SaveTweet(repo, presenter);
-
-    const tweets = mockFactory.getSampleTweets();
-    const tweet = tweets[0];
-
-    interactor.start(tweet);
-}
-
-//=============================================================
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//=============================================================
 
 function testTwitterForUsers() {
 
@@ -256,6 +264,19 @@ function testTwitterForApps() {
         }
     };
     twitter.fetchTweets(filter, fetchHandler);
+}
+
+//==============================================================================
+
+function testMineTweetsInteractor() {
+
+    const twitterHelper = mockFactory.createTwitterHelperForUsers();
+    const repo = factory.createTweetsRepository();
+    const mineTweets = new MineTweets(twitterHelper, repo);
+
+    const filter = "javascript";
+
+    mineTweets.start(filter);
 }
 
 //===========================================================

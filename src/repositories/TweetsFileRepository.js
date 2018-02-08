@@ -1,14 +1,23 @@
 // external dependencies
-const fs = require('fs');
+const fs = require("fs");
+
+// internal dependencies
+const Tweet = require("../models/Tweet");
 
 // constants
-const DB_PATH = './db/test-db.txt';
-const ENCODING = 'utf-8';
+const DB_PATH = "./db/test-db.txt";
+const ENCODING = "utf-8";
+const LINE_SEPARATOR = "<NEWLINE>"
 
-class TweetsRepository {
+class TweetsFileRepository {
+
+    connect(callback) {
+        return callback();
+    }
 
     saveTweet(tweet, handler) {
-        let tweetAsString = `${tweet.field},${tweet.body}\n`;
+        let tweetAsString = Tweet.toString(tweet);
+        tweetAsString += LINE_SEPARATOR;
 
         fs.appendFile(DB_PATH, tweetAsString, (err) => {
             if (err) {
@@ -32,19 +41,16 @@ class TweetsRepository {
 }
 
 function _parse(data) {
-    let tweets = [];
-    let lines = data.split('\n');
+    const tweets = [];
+
+    const lines = data.split(LINE_SEPARATOR);
     for (let line of lines) {
-        let fields = line.split(',');
-        if (fields.length == 2){
-            let tweet = {
-                field : fields[0],
-                body : fields[1]
-            };
+        if (line.trim.length > 0) {
+            const tweet = Tweet.toJSON(line);
             tweets.push(tweet);
         }
     }
     return tweets;
 }
 
-module.exports = TweetsRepository;
+module.exports = TweetsFileRepository;

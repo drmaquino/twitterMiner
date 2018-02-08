@@ -21,3 +21,25 @@ app.route('/tweets?username={username}').get((req, res) => controller.onGetAllTw
 // start listening
 app.listen(port);
 console.log('twitter data miner RESTful API server started on: ' + port);
+
+
+const config = require("./config.js");
+// establish connection to mongodb atlas
+// mongodb.connect(config.db.uri, (err, db) => {
+
+//     if (err) {
+//         console.log('An error occurred while attempting to connect to MongoDB', err)
+//         process.exit(1)
+//     }
+
+//     console.log(
+//         '%s v%s ready to accept connections on port %s in %s environment.',
+//         server.name,
+//         config.version,
+//         config.port,
+//         config.env
+//     )
+
+//     require('./routes')({ db, server })
+
+// });

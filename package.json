@@ -4,7 +4,7 @@
   "description": "data miner for twitter",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon test.js",
+    "test": "nodemon tests/test.js",
     "start": "node server.js"
   },
   "author": {

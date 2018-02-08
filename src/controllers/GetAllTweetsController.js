@@ -12,7 +12,7 @@ class GetAllTweetsController {
     onGetAllTweets(req, res){
         const repo = this.factory.createTweetsRepository();
 
-        const presenter = {
+        const handler = {
             tweetsRetrieved: (tweets) => {
                 res.send(tweets);
             },
@@ -21,7 +21,7 @@ class GetAllTweetsController {
             }
         };
 
-        const useCase = new GetAllTweets(repo, presenter);
+        const useCase = new GetAllTweets(repo, handler);
         useCase.start();
     }
 };

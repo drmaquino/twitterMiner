@@ -1,17 +1,17 @@
 class SaveTweets {
 
-    constructor(repo, presenter) {
+    constructor(repo, handler) {
         this.repo = repo;
-        this.presenter = presenter;
+        this.handler = handler;
     }
 
     start(tweet) {
         const useCaseHandler = {
             onSuccess: () => {
-                this.presenter.tweetsSaved();
+                this.handler.tweetsSaved();
             },
             onError: () => {
-                this.presenter.tweetsSaveFailed();
+                this.handler.tweetsSaveFailed();
             }
         };
         this.repo.saveTweet(tweet, useCaseHandler);
