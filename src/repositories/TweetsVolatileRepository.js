@@ -10,11 +10,13 @@ class TweetsVolatileRepository {
 
     saveTweet(tweet, handler) {
         this.tweets.push(tweet);
-        handler.onSuccess();
+        // handler.onSuccess();
+        handler();
     }
 
     getAllTweets(handler) {
-        handler.onSuccess(this.tweets);
+        // handler.onSuccess(this.tweets);
+        handler(null, this.tweets);
     }
 
 }

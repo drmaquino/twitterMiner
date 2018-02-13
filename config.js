@@ -1,12 +1,13 @@
-'use strict'
+"use strict"
 
 module.exports = {
-    name: 'rest-api',
-    version: '0.0.1',
-    env: process.env.NODE_ENV || 'development',
+    name: "rest-api",
+    version: "0.0.1",
+    env: process.env.NODE_ENV || "development",
     port: process.env.PORT || 3000,
     db: {
-        uri: 'mongodb://drmaquino:u569g8nvMO!@maincluster-shard-00-00-gbnfu.mongodb.net:27017,maincluster-shard-00-01-gbnfu.mongodb.net:27017,maincluster-shard-00-02-gbnfu.mongodb.net:27017/twitterdb?ssl=true&replicaSet=MainCluster-shard-0&authSource=admin'
+        cloudUri: "mongodb://drmaquino:u569g8nvMO!@maincluster-shard-00-00-gbnfu.mongodb.net:27017,maincluster-shard-00-01-gbnfu.mongodb.net:27017,maincluster-shard-00-02-gbnfu.mongodb.net:27017/twitterdb?ssl=true&replicaSet=MainCluster-shard-0&authSource=admin",
+        localUri: "mongodb://twitter_app:twitter_app@localhost:27017"
     },
     twitterAPI: {
         CONSUMER_KEY: "FarRAIgvRpc8kNv5n9gLcvTO4",

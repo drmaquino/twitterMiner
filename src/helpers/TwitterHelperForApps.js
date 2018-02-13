@@ -7,22 +7,20 @@ class TwitterHelperForApps {
         this.client = new Twitter(credentials);
     }
 
-    fetchTweets(filterCriteria, handler) {
+    fetchTweets(filterCriteria, callback) {
         const endPoint = "search/tweets";
 
         const encodedFilter = encodeURI(filterCriteria);
 
         const filter = {q: encodedFilter};
 
-        const callback = (err, tweets, response) => {
+        this.client.get(endPoint, filter, (error, tweets, response) => {
             if (err){
-                handler.onError(err);
+                callback(error);
             } else {
-                handler.onSuccess(tweets);
+                callback(null, tweets);
             }
-        };
-
-        this.client.get(endPoint, filter, callback);
+        });
     }
 }
 

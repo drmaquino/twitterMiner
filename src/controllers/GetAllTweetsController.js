@@ -1,7 +1,6 @@
 // internal dependencies
-GetAllTweets = require("../useCases/GetAllTweets");
-
-// external dependencies
+const GetAllTweets = require("../useCases/GetAllTweets");
+const Tweet = require("../models/Tweet");
 
 class GetAllTweetsController {
 
@@ -12,16 +11,18 @@ class GetAllTweetsController {
     onGetAllTweets(req, res){
         const repo = this.factory.createTweetsRepository();
 
-        const handler = {
-            tweetsRetrieved: (tweets) => {
-                res.send(tweets);
-            },
-            tweetsRetrievalFailed: () => {
+        const useCase = new GetAllTweets(repo, (error, tweets) => {
+            if (error) {
                 res.send("error retrieving tweets");
+            } else {
+                if (Tweet.areValid(tweets)) {
+                    res.send(tweets);
+                } else {
+                    res.send("error parsing tweets");
+                }
             }
-        };
+        });
 
-        const useCase = new GetAllTweets(repo, handler);
         useCase.start();
     }
 };

@@ -15,26 +15,26 @@ class TweetsFileRepository {
         return callback();
     }
 
-    saveTweet(tweet, handler) {
+    saveTweet(tweet, callback) {
         let tweetAsString = Tweet.toString(tweet);
         tweetAsString += LINE_SEPARATOR;
 
-        fs.appendFile(DB_PATH, tweetAsString, (err) => {
-            if (err) {
-                handler.onError();
+        fs.appendFile(DB_PATH, tweetAsString, (error) => {
+            if (error) {
+                callback(error);
             } else {
-                handler.onSuccess();
+                callback();
             }
         });
     }
 
-    getAllTweets(handler) {
-        fs.readFile(DB_PATH, ENCODING, (err, data) => {
-            if (err) {
-                handler.onError(err);
+    getAllTweets(callback) {
+        fs.readFile(DB_PATH, ENCODING, (error, data) => {
+            if (error) {
+                callback(error);
             } else {
                 let tweets = _parse(data);
-                handler.onSuccess(tweets);
+                callback(null, tweets);
             }
         });
     }

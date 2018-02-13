@@ -6,25 +6,20 @@ class MineTweets {
     }
 
     start(filter) {
-        const repoHandler = {
-            onSuccess: () => {
-                console.log("tweet saved to repo");
-            },
-            onError: () => {
-                console.log("tweet not saved to repo");
-            }
-        }
-
-        const streamHandler = {
-            onEvent: (tweet) => {
-                console.log("esta entrando un tweet");
-                this.repo.saveTweet(tweet, repoHandler);
-            },
-            onError: (error) => {
+        this.twitterHelper.startStream(filter, (error, tweet) => {
+            if (error) {
                 console.log(error);
+            } else {
+                console.log("esta entrando un tweet");
+                this.repo.saveTweet(tweet, (error) => {
+                    if (error) {
+                        console.log("tweet not saved to repo");
+                    } else {
+                        console.log("tweet saved to repo");
+                    }
+                });
             }
-        }
-        this.twitterHelper.startStream(filter, streamHandler);
+        });
     }
 }
 

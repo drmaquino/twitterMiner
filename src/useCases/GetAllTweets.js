@@ -1,20 +1,18 @@
 class GetAllTweets {
 
-    constructor(repo, presenter) {
+    constructor(repo, handler) {
         this.repo = repo;
-        this.presenter = presenter;
+        this.handler = handler;
     }
 
     start() {
-        const queryHandler = {
-            onError: () => {
-                this.presenter.tweetsRetrievalFailed();
-            },
-            onSuccess: (tweets) => {
-                this.presenter.tweetsRetrieved(tweets);
+        this.repo.getAllTweets((error, tweets) => {
+            if (error) {
+                this.handler(error);
+            } else {
+                this.handler(null, tweets);
             }
-        };
-        this.repo.getAllTweets(queryHandler);
+        });
     }
 }
 

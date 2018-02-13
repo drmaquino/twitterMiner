@@ -64,20 +64,17 @@ function testSaveTweetToRepo() {
 
     const tweet = mockFactory.getSampleTweet();
 
-    const handler = {
-        onSuccess: () => {
-            console.log("SaveTweetToRepo -> OK");
-        },
-        onError: () => {
-            console.log(color.red("SaveTweetToRepo -> ERROR"));
-        }
-    };
-
     repo.connect((err) => {
         if (err) {
             throw err;
         } else {
-            repo.saveTweet(tweet, handler);
+            repo.saveTweet(tweet, (error) => {
+                if (error) {
+                    console.log(color.red("SaveTweetToRepo -> ERROR"));
+                } else {
+                    console.log("SaveTweetToRepo -> OK");
+                }
+            });
         }
     });
 }
@@ -96,7 +93,13 @@ function testSaveTweetInteractor() {
         }
     };
 
-    const interactor = new SaveTweet(repo, handler);
+    const interactor = new SaveTweet(repo, (error) => {
+        if (error) {
+            console.log(color.red("SaveTweet interactor -> ERROR"));
+        } else {
+            console.log("SaveTweet interactor -> OK");
+        }
+    });
 
     const tweet = mockFactory.getSampleTweet();
 
@@ -124,7 +127,17 @@ function testGetTweetsFromRepo() {
         }
     };
 
-    repo.getAllTweets(handler);
+    repo.getAllTweets((error, tweets) => {
+        if (error) {
+            console.log(color.red("GetTweetsFromRepo -> ERROR"));
+        } else {
+            if (Tweet.areValid(tweets)) {
+                console.log("GetTweetsFromRepo -> OK");
+            } else {
+                console.log(color.yellow("GetTweetsFromRepo -> INVALID OUTPUT"));
+            }
+        }
+    });
 };
 
 //=============================================================
@@ -146,7 +159,18 @@ function testGetAllTweetsInteractor() {
         }
     };
 
-    const interactor = new GetAllTweets(repo, handler);
+    const interactor = new GetAllTweets(repo, (error, tweets) => {
+        if (error) {
+            console.log(color.red("GetAllTweets interactor -> ERROR"));
+        } else {
+            if (Tweet.areValid(tweets)) {
+                console.log("GetAllTweets interactor -> OK");
+            } else {
+                console.log(color.yellow("GetAllTweets interactor -> INVALID OUTPUT"));
+            }
+        }
+    });
+
     interactor.start();
 };
 
@@ -174,7 +198,7 @@ function testGetAllTweetsController() {
 function testGetAllTweetsRoute() {
     // setup server
     const app = express();
-    const port = config.port;//process.env.PORT || 3000;
+    const port = config.port;
 
     const controller = mockFactory.createGetAllTweetsController();
 
@@ -231,11 +255,9 @@ function testTwitterForUsers() {
             } else {
                 console.log(color.yellow("TwitterForUsers helper -> INVALID EVENT"));
             }
-            // console.log(util.inspect(event, false, null));
         },
         onError: (error) => {
             console.log(color.red("TwitterForUsers helper -> ERROR"));
-            // console.log(error);
         }
     }
     twitter.startStream(filter, streamHandler);
@@ -251,11 +273,9 @@ function testTwitterForApps() {
 
     const fetchHandler = {
         onError: (err) => {
-            // console.log(err);
             console.log(color.red("TwitterForApps helper -> ERROR"));
         },
         onSuccess: (tweets) => {
-            // console.log(util.inspect(tweets, false, null));
             if (tweets.search_metadata && tweets.statuses) {
                 console.log("TwitterForApps helper -> OK");
             } else {

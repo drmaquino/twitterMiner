@@ -42,11 +42,11 @@ class MockFactory {
 
     createTweetsRepository () {
         const repo = {
-            getAllTweets: (handler) => {
-                handler.onSuccess(sampleTweets);
+            getAllTweets: (callback) => {
+                callback(null, sampleTweets);
             },
-            saveTweet: (tweet, handler) => {
-                handler.onSuccess();
+            saveTweet: (tweet, callback) => {
+                callback();
             }
         };
         return repo;
@@ -63,11 +63,11 @@ class MockFactory {
 
     createTwitterHelperForUsers () {
         const helper = {
-            startStream: (filter, handler) => {
+            startStream: (filter, callback) => {
                 let callCount = 0;
                 const repeater = setInterval(() => {
                     if (callCount < 3) {
-                        handler.onEvent(sampleTweet);
+                        callback(null, sampleTweet);
                         callCount += 1;
                     } else {
                         clearInterval(repeater);
@@ -79,8 +79,7 @@ class MockFactory {
     }
 
     createTwitterHelperForApps () {
-        const helper = {};
-        return helper;
+        throw "not yet implemented"
     }
 }
 

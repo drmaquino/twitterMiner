@@ -1,6 +1,7 @@
-const TweetsFileRepository = require('../repositories/TweetsFileRepository');
-const TweetsMongoRepository = require('../repositories/TweetsMongoRepository');
-const TweetsVolatileRepository = require('../repositories/TweetsVolatileRepository');
+// internal dependencies
+const TweetsFileRepository = require("../repositories/TweetsFileRepository");
+const TweetsMongoRepository = require("../repositories/TweetsMongoRepository");
+const TweetsVolatileRepository = require("../repositories/TweetsVolatileRepository");
 const MineTweets = require("../useCases/MineTweets");
 const TwitterHelperForUsers = require("../helpers/TwitterHelperForUsers");
 const TwitterHelperForApps = require("../helpers/TwitterHelperForApps");
@@ -17,8 +18,8 @@ class Factory {
     createTweetsRepository () {
         if (this.repository == null) {
             // this.repository = new TweetsVolatileRepository();
-            this.repository = new TweetsFileRepository();
-            // this.repository = new TweetsMongoRepository();
+            // this.repository = new TweetsFileRepository();
+            this.repository = new TweetsMongoRepository();
         }
         return this.repository;
     }

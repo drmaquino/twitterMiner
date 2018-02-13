@@ -6,15 +6,13 @@ class SaveTweets {
     }
 
     start(tweet) {
-        const useCaseHandler = {
-            onSuccess: () => {
-                this.handler.tweetsSaved();
-            },
-            onError: () => {
-                this.handler.tweetsSaveFailed();
+        this.repo.saveTweet(tweet, (error) => {
+            if (error) {
+                this.handler(error);
+            } else {
+                this.handler();
             }
-        };
-        this.repo.saveTweet(tweet, useCaseHandler);
+        });
     }
 }
 
