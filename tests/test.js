@@ -27,9 +27,9 @@ const mockFactory = new MockFactory();
 //==================================================
 
 // uses file system or MongoDB for storage
-testSaveTweetToRepo();
+// testSaveTweetToRepo();
 
-testSaveTweetInteractor();
+// testSaveTweetInteractor();
 
 //----------------------------------
 
@@ -52,7 +52,7 @@ testGetAllTweetsRoute();
 // will block connections if there's too many attempts!
 // testTwitterForUsers();
 
-testMineTweetsInteractor();
+// testMineTweetsInteractor();
 
 //=============================================================
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -105,15 +105,21 @@ function testGetTweetsFromRepo() {
 
     const repo = factory.createTweetsRepository();
 
-    repo.getAllTweets((error, tweets) => {
-        if (error) {
-            console.log(color.red("GetTweetsFromRepo -> ERROR"));
+    repo.connect((err) => {
+        if (err) {
+            throw err;
         } else {
-            if (Tweet.areValid(tweets)) {
-                console.log("GetTweetsFromRepo -> OK");
-            } else {
-                console.log(color.yellow("GetTweetsFromRepo -> INVALID OUTPUT"));
-            }
+            repo.getAllTweets((error, tweets) => {
+                if (error) {
+                    console.log(color.red("GetTweetsFromRepo -> ERROR"));
+                } else {
+                    if (Tweet.areValid(tweets)) {
+                        console.log("GetTweetsFromRepo -> OK");
+                    } else {
+                        console.log(color.yellow("GetTweetsFromRepo -> INVALID OUTPUT"));
+                    }
+                }
+            });
         }
     });
 };
