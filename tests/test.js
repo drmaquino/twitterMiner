@@ -84,15 +84,6 @@ function testSaveTweetToRepo() {
 function testSaveTweetInteractor() {
     const repo = mockFactory.createTweetsRepository();
 
-    const handler = {
-        tweetsSaveFailed: () => {
-            console.log(color.red("SaveTweet interactor -> ERROR"));
-        },
-        tweetsSaved: () => {
-            console.log("SaveTweet interactor -> OK");
-        }
-    };
-
     const interactor = new SaveTweet(repo, (error) => {
         if (error) {
             console.log(color.red("SaveTweet interactor -> ERROR"));
@@ -114,19 +105,6 @@ function testGetTweetsFromRepo() {
 
     const repo = factory.createTweetsRepository();
 
-    const handler = {
-        onError: (err) => {
-            console.log(color.red("GetTweetsFromRepo -> ERROR"));
-        },
-        onSuccess: (tweets) => {
-            if (Tweet.areValid(tweets)) {
-                console.log("GetTweetsFromRepo -> OK");
-            } else {
-                console.log(color.yellow("GetTweetsFromRepo -> INVALID OUTPUT"));
-            }
-        }
-    };
-
     repo.getAllTweets((error, tweets) => {
         if (error) {
             console.log(color.red("GetTweetsFromRepo -> ERROR"));
@@ -145,19 +123,6 @@ function testGetTweetsFromRepo() {
 function testGetAllTweetsInteractor() {
 
     const repo = mockFactory.createTweetsRepository();
-
-    const handler = {
-        tweetsRetrieved: (tweets) => {
-            if (Tweet.areValid(tweets)) {
-                console.log("GetAllTweets interactor -> OK");
-            } else {
-                console.log(color.yellow("GetAllTweets interactor -> INVALID OUTPUT"));
-            }
-        },
-        tweetsRetrievalFailed: () => {
-            console.log(color.red("GetAllTweets interactor -> ERROR"));
-        }
-    };
 
     const interactor = new GetAllTweets(repo, (error, tweets) => {
         if (error) {
@@ -242,8 +207,10 @@ function testTwitterForUsers() {
 
     const filter = "javascript";
 
-    const streamHandler = {
-        onSuccess: (event) => {
+    twitter.startStream(filter, (error, event) => {
+        if (error) {
+            console.log(color.red("TwitterForUsers helper -> ERROR"));
+        } else {
             if (event.text) {
                 if (event.text.toLowerCase().includes(filter)) {
                     console.log("TwitterForUsers helper -> MATCHING EVENT RECEIVED");
@@ -255,12 +222,8 @@ function testTwitterForUsers() {
             } else {
                 console.log(color.yellow("TwitterForUsers helper -> INVALID EVENT"));
             }
-        },
-        onError: (error) => {
-            console.log(color.red("TwitterForUsers helper -> ERROR"));
         }
-    }
-    twitter.startStream(filter, streamHandler);
+    });
 }
 
 //==============================================================================
@@ -271,19 +234,17 @@ function testTwitterForApps() {
 
     const filter = "javascript";
 
-    const fetchHandler = {
-        onError: (err) => {
+    twitter.fetchTweets(filter, (error, tweets) => {
+        if (error) {
             console.log(color.red("TwitterForApps helper -> ERROR"));
-        },
-        onSuccess: (tweets) => {
+        } else {
             if (tweets.search_metadata && tweets.statuses) {
                 console.log("TwitterForApps helper -> OK");
             } else {
                 console.log(color.yellow("TwitterForApps helper -> INVALID OUTPUT"));
             }
         }
-    };
-    twitter.fetchTweets(filter, fetchHandler);
+    });
 }
 
 //==============================================================================

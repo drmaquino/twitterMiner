@@ -18,8 +18,8 @@ class Factory {
     createTweetsRepository () {
         if (this.repository == null) {
             // this.repository = new TweetsVolatileRepository();
-            // this.repository = new TweetsFileRepository();
-            this.repository = new TweetsMongoRepository();
+            this.repository = new TweetsFileRepository();
+            // this.repository = new TweetsMongoRepository();
         }
         return this.repository;
     }

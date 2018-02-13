@@ -21,7 +21,7 @@ class TwitterHelperForUsers {
         });
     }
 
-    startStream (filter, callback) {
+    startStream (filter, handler) {
         const endPoint = "statuses/filter";
 
         const encodedFilter = encodeURI(filter);
@@ -33,11 +33,11 @@ class TwitterHelperForUsers {
         const stream = this.client.stream(endPoint, criteria);
 
         stream.on("data", function(event) {
-            callback(null, event);
+            handler(null, event);
         });
 
-        stream.on("erroror", function(erroror) {
-            callback(error);
+        stream.on("error", function(error) {
+            handler(error);
         });
     }
 }
