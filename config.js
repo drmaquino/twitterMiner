@@ -6,8 +6,10 @@ module.exports = {
     env: process.env.NODE_ENV || "development",
     port: process.env.PORT || 3000,
     db: {
-        cloudUri: "mongodb://drmaquino:u569g8nvMO!@maincluster-shard-00-00-gbnfu.mongodb.net:27017,maincluster-shard-00-01-gbnfu.mongodb.net:27017,maincluster-shard-00-02-gbnfu.mongodb.net:27017/twitterdb?ssl=true&replicaSet=MainCluster-shard-0&authSource=admin",
-        localUri: "mongodb://twitter_app:twitter_app@localhost:27017"
+        // remote db (mongo atlas)
+        // uri: "mongodb://twitterminer:HWgSm3XtH2ruWb9i@maincluster-shard-00-00-gbnfu.mongodb.net:27017,maincluster-shard-00-01-gbnfu.mongodb.net:27017,maincluster-shard-00-02-gbnfu.mongodb.net:27017/test?ssl=true&replicaSet=MainCluster-shard-0&authSource=admin"
+        // local db (mongodb)
+        uri: "mongodb://twitter_app:twitter_app@localhost:27017"
     },
     twitterAPI: {
         CONSUMER_KEY: "FarRAIgvRpc8kNv5n9gLcvTO4",
@@ -17,3 +19,7 @@ module.exports = {
         BEARER_TOKEN: "AAAAAAAAAAAAAAAAAAAAAGB04AAAAAAAa3DqNTrw8zFDSOmlRtvZFcPc5z8%3DUM0SR10QlmZvCzKKqFG4JDPdRsJSW7K5yw56VuRNGZoQbv7796"
     }
 }
+
+
+
+

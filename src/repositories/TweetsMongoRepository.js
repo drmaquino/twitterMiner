@@ -12,14 +12,18 @@ class TweetsMongoRepository {
     }
 
     connect(callback) {
-        MongoClient.connect(config.db.localUri, (error, client) => {
-            if (error) {
-                callback(error);
-            } else {
-                this.db = client.db("twitterdb");
-                callback();
-            }
-        });
+        if (this.db) {
+            callback();
+        } else {
+            MongoClient.connect(config.db.uri, (error, client) => {
+                if (error) {
+                    callback(error);
+                } else {
+                    this.db = client.db("twitterdb");
+                    callback();
+                }
+            });
+        }
     }
 
     saveTweet(tweet, callback) {
