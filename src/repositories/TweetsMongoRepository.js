@@ -9,6 +9,7 @@ class TweetsMongoRepository {
 
     constructor() {
         this.db = null;
+        console.log(">> using mongo db repository");
     }
 
     connect(callback) {

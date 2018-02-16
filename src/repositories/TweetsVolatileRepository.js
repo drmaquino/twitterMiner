@@ -2,6 +2,7 @@ class TweetsVolatileRepository {
 
     constructor () {
         this.tweets = [];
+        console.log(">> using in memory repository");
     }
 
     connect(callback) {

@@ -12,6 +12,7 @@ const LINE_SEPARATOR = "<NEWLINE>"
 class TweetsFileRepository {
 
     connect(callback) {
+        console.log(">> using file system repository");
         return callback();
     }
 
