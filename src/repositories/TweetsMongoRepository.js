@@ -29,10 +29,8 @@ class TweetsMongoRepository {
 
     saveTweet(tweet, callback) {
         if (this.db) {
-            console.log(tweet);
             this.db.collection("tweets").save(tweet, (error, result) => {
                 if (error) {
-                    console.log(error);
                     callback(error);
                 } else {
                     callback();
@@ -44,7 +42,18 @@ class TweetsMongoRepository {
     }
 
     getAllTweets(callback) {
-        console.log("TweetsMongoRepository#getAllTweets: not implemented yet");
+        // console.log("TweetsMongoRepository#getAllTweets: not implemented yet");
+        if (this.db) {
+            this.db.collection("tweets").find({}).toArray((error, tweets) => {
+                if (error) {
+                    callback(error);
+                } else {
+                    callback(null, tweets);
+                }
+            });
+        } else {
+            console.log("no cnx found");
+        }
     }
 }
 
