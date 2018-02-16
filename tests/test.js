@@ -1,15 +1,15 @@
 // internal dependencies
 const GetAllTweets = require('../src/useCases/GetAllTweets');
+const GetTweetsByCriteria = require('../src/useCases/GetTweetsByCriteria');
 const SaveTweet = require('../src/useCases/SaveTweet')
 const MineTweets = require('../src/useCases/MineTweets');
-
 const GetAllTweetsController = require('../src/controllers/GetAllTweetsController');
+const GetTweetsByCriteriaController = require('../src/controllers/GetTweetsByCriteriaController');
 
 const Factory = require('../src/factories/Factory');
 const MockFactory = require('../src/factories/MockFactory');
 
 const Tweet = require('../src/models/Tweet');
-const credentials = require("../credentials.json");
 const config = require("../config");
 
 // external dependencies
@@ -27,10 +27,11 @@ const mockFactory = new MockFactory();
 //==================================================
 
 // uses file system or MongoDB for storage
-// testSaveTweetToRepo();
+testSaveTweetToRepo();
 
-// testSaveTweetInteractor();
+testSaveTweetInteractor();
 
+//----------------------------------
 //----------------------------------
 
 // uses file system for storage
@@ -42,6 +43,18 @@ testGetAllTweetsController();
 
 // uses internet cnx (fake internals)
 testGetAllTweetsRoute();
+
+//----------------------------------
+//----------------------------------
+
+testGetTweetsByCriteriaFromRepo();
+
+testGetTweetsByCriteriaInteractor();
+
+testGetTweetsByCriteriaController();
+
+// uses internet cnx (fake internals)
+testGetTweetsByCriteriaRoute()
 
 //----------------------------------
 
@@ -63,16 +76,24 @@ function testSaveTweetToRepo() {
     const repo = factory.createTweetsRepository();
 
     const tweet = mockFactory.getSampleTweet();
+    const tweets = mockFactory.getSampleTweets();
 
     repo.connect((err) => {
         if (err) {
             throw err;
         } else {
-            repo.saveTweet(tweet, (error) => {
+            repo.saveTweet(tweets[0], (error) => {
                 if (error) {
                     console.log(color.red("SaveTweetToRepo -> ERROR"));
                 } else {
-                    console.log("SaveTweetToRepo -> OK");
+                    console.log("SaveTweetToRepo -> OK 1");
+                }
+            });
+            repo.saveTweet(tweets[1], (error) => {
+                if (error) {
+                    console.log(color.red("SaveTweetToRepo -> ERROR"));
+                } else {
+                    console.log("SaveTweetToRepo -> OK 2");
                 }
             });
         }
@@ -199,6 +220,118 @@ function testGetAllTweetsRoute() {
     })
     .catch((error) => {
         console.log(color.red("GetAllTweets route -> ERROR"));
+    });
+}
+
+//=============================================================
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//=============================================================
+
+function testGetTweetsByCriteriaFromRepo() {
+
+    const repo = mockFactory.createTweetsRepository();
+    const criteria = { "user.name" : "John Doe" };
+
+    repo.connect((err) => {
+        if (err) {
+            throw err;
+        } else {
+            repo.getTweetsByCriteria(criteria, (error, tweets) => {
+                if (error) {
+                    console.log(color.red("GetTweetsFromRepo -> ERROR"));
+                } else {
+                    if (Tweet.areValid(tweets)) {
+                        console.log("GetTweetsFromRepo -> OK");
+                    } else {
+                        console.log(color.yellow("GetTweetsFromRepo -> INVALID OUTPUT"));
+                    }
+                }
+            });
+        }
+    });
+};
+
+//=============================================================
+
+function testGetTweetsByCriteriaInteractor() {
+
+    const repo = mockFactory.createTweetsRepository();
+    const criteria = {};
+
+    const interactor = new GetTweetsByCriteria(repo, (error, tweets) => {
+        if (error) {
+            console.log(color.red("GetTweetsByCriteria interactor -> ERROR"));
+        } else {
+            if (Tweet.areValid(tweets)) {
+                console.log("GetTweetsByCriteria interactor -> OK");
+            } else {
+                console.log(color.yellow("GetTweetsByCriteria interactor -> INVALID OUTPUT"));
+            }
+        }
+    });
+
+    interactor.start(criteria);
+}
+
+//==============================================================
+
+function testGetTweetsByCriteriaController() {
+
+    const controller = new GetTweetsByCriteriaController(mockFactory);
+
+    const fakeReq = {
+                query : {
+            username : "John Doe"
+        }
+    };
+    const fakeRes = {
+        send: (tweets) => {
+            if (Tweet.areValid(tweets)) {
+                console.log("GetAllTweets controller -> OK");
+            } else {
+                console.log(color.yellow("GetAllTweets controller -> INVALID OUTPUT"));
+            }
+        }
+    };
+    controller.onGetTweetsByCriteria(fakeReq, fakeRes);
+};
+
+//=====================================================
+
+function testGetTweetsByCriteriaRoute() {
+    // setup server
+    const app = express();
+    const port = 4000;//config.port;
+
+    const controller = mockFactory.createGetTweetsByCriteriaController();
+
+    const tweetsRouter = express.Router();
+
+    tweetsRouter.get("/tweets", (req, res) => {
+        controller.onGetTweetsByCriteria(req, res);
+    });
+
+    app.use("/", tweetsRouter);
+
+    const server = app.listen(port);
+
+    // begin test
+    axios.get("http://localhost:4000/tweets?username=John%20Doe")
+    .then((response) => {
+        const tweets = response.data;
+        if (tweets) {
+            if (Tweet.areValid(tweets)) {
+                console.log("GetTweetsByCriteria route -> OK");
+            } else {
+                console.log(color.yellow("GetTweetsByCriteria route -> INVALID OUTPUT"));
+            }
+        } else {
+            console.log("GetTweetsByCriteria route -> OK (but no data retrieved)");
+        }
+        server.close();
+    })
+    .catch((error) => {
+        console.log(color.red("GetTweetsByCriteria route -> ERROR"));
     });
 }
 

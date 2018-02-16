@@ -42,9 +42,22 @@ class TweetsMongoRepository {
     }
 
     getAllTweets(callback) {
-        // console.log("TweetsMongoRepository#getAllTweets: not implemented yet");
         if (this.db) {
-            this.db.collection("tweets").find({}).toArray((error, tweets) => {
+            this.db.collection("tweets").find().toArray((error, tweets) => {
+                if (error) {
+                    callback(error);
+                } else {
+                    callback(null, tweets);
+                }
+            });
+        } else {
+            console.log("no cnx found");
+        }
+    }
+
+    getTweetsByCriteria(criteria, callback) {
+        if (this.db) {
+            this.db.collection("tweets").find(criteria).toArray((error, tweets) => {
                 if (error) {
                     callback(error);
                 } else {
